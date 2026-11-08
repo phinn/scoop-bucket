@@ -1,0 +1,31 @@
+{
+    "version": "4.2.0",
+    "description": "Local-first AI agent dashboard. Runs built-in ReAct agents alongside Claude Code / Codex CLIs in parallel channels, with tools, MCP support and SQLite-backed long-term memory.",
+    "homepage": "https://phinn.github.io/KinetAios/",
+    "license": "GPL-3.0",
+    "url": "https://github.com/phinn/KinetAios/releases/download/v4.2.0/KinetAios.Setup.4.2.0.exe#/dl.7z",
+    "hash": "f0daacb8980b5857c4c4ed5ec240110318fe01d680ae5d395dbcdb2cbe50dc30",
+    "architecture": {
+        "64bit": {
+            "installer": {
+                "script": [
+                    "Expand-7zipArchive \"$dir\\`$PLUGINSDIR\\app-64.7z\" \"$dir\"",
+                    "Remove-Item \"$dir\\`$PLUGINSDIR\", \"$dir\\Uninstall*\" -Force -Recurse"
+                ]
+            }
+        }
+    },
+    "bin": "KinetAios.exe",
+    "shortcuts": [
+        [
+            "KinetAios.exe",
+            "KinetAios"
+        ]
+    ],
+    "checkver": {
+        "github": "https://github.com/phinn/KinetAios"
+    },
+    "autoupdate": {
+        "url": "https://github.com/phinn/KinetAios/releases/download/v$version/KinetAios.Setup.$version.exe#/dl.7z"
+    }
+}
